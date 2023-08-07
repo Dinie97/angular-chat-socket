@@ -1,0 +1,156 @@
+.container {
+  min-height: 100vh;
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chat-box {
+  width: 30em;
+  height: 40em;
+  border: 2px solid #414040;
+  border-radius: 1em;
+  background: #fff;
+}
+
+.profile-img {
+  width: 3em;
+  border-radius: 50%;
+  margin-right: 1em;
+}
+
+.chat-img {
+  width: 1.5em;
+  border-radius: 50%;
+  margin-right: 1em;
+}
+
+.chat-img-sender {
+  width: 1.5em;
+  border-radius: 50%;
+  margin-left: 1em;
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  padding: 1em 2em;
+  justify-content: space-between;
+  border-bottom: 1px solid #d2d2d2;
+}
+
+.profile-details {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  padding: 0.5rem;
+}
+
+.chat-content {
+  margin: 0px 1em 1em 1em;
+  display: flex;
+  height: 70%;
+  max-height: 70%;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.sender {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-right: 1em;
+  margin-bottom: 1em;
+}
+
+.receiver {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  margin-left: 1em;
+  margin-bottom: 1em;
+}
+
+.receiver-msg {
+  width: auto;
+  max-width: 70%;
+  border: 1px solid;
+  padding: 0.5rem 1rem;
+  border-radius: 1em;
+  font-size: 14px;
+  margin-top: 0.3em;
+}
+
+.sender-msg {
+  border: 1px solid;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  width: auto;
+  max-width: 70%;
+  color: #fff;
+  margin-top: 0.3em;
+  font-size: 14px;
+  background: blue;
+}
+
+.msg-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.receiver-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.sender-img {
+  position: relative;
+  display: grid;
+  align-content: flex-start;
+  padding-top: 0.5em;
+}
+
+.receiver-img {
+  position: relative;
+  display: grid;
+  align-content: flex-start;
+}
+
+.form-control {
+  width: 70%;
+  min-height: 2em;
+  margin-right: 1em;
+  border-radius: 1em;
+  padding: 1em;
+}
+
+.chat-input {
+  display: flex;
+  justify-content: center;
+  margin-top: 2em;
+}
+
+.fa-paper-plane {
+  transform: rotate(45deg);
+}
+
+span.submit-button {
+  width: 2em;
+  height: 2em;
+  border: 1px solid;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+  color: #fff;
+  background-color: blue;
+}
+
+.user-name {
+  font-weight: 800;
+}
