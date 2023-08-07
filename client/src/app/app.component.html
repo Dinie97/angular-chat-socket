@@ -1,6 +1,88 @@
 <router-outlet></router-outlet>
 
-<div *ngFor="let message of messageList">
+<div class="container">
+  <div class="chat-box">
+    <div class="chat-header">
+      <div class="profile-details">
+        <img src="../assets/profile.jpg" alt="profile" class="profile-img" />
+        <span class="user-name">User Name</span>
+      </div>
+      <div>
+        <span class="icon"><i class="fas fa-bell"></i></span>
+        <span class="icon"><i class="fas fa-info-circle"></i></span>
+      </div>
+    </div>
+    <div class="chat-content">
+      <div class="receiver">
+        <div class="receiver-img">
+          <img src="../assets/profile.jpg" alt="profile" class="chat-img" />
+        </div>
+        <div class="receiver-content">
+          <div class="receiver-msg">
+            <span>Test Message text receiver hellooo 1</span>
+          </div>
+          <div class="receiver-msg">
+            <span>Test Message text receiver hellooo 2</span>
+          </div>
+          <div class="receiver-msg">
+            <span>Test Message text receiver hellooo 3</span>
+          </div>
+        </div>
+      </div>
+      <div class="sender">
+        <div class="sender-img">
+          <img
+            src="../assets/profile.jpg"
+            alt="profile"
+            class="chat-img-sender"
+          />
+        </div>
+        <div class="msg-content">
+          <div class="sender-msg">
+            <span>sender text message testing purpose 1 </span>
+          </div>
+
+          <div class="sender-msg">
+            <span>sender text message testing purpose 2 </span>
+          </div>
+
+          <div class="sender-msg">
+            <span>sender text message testing purpose 3</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="receiver">
+        <div class="receiver-img">
+          <img src="../assets/profile.jpg" alt="profile" class="chat-img" />
+        </div>
+        <div class="receiver-content">
+          <div class="receiver-msg">
+            <span>Test Message text receiver hellooo 1</span>
+          </div>
+          <div class="receiver-msg">
+            <span>Test Message text receiver hellooo 2</span>
+          </div>
+          <div class="receiver-msg">
+            <span>Test Message text receiver hellooo 3</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="chat-input">
+      <textarea
+        class="form-control"
+        [(ngModel)]="newMessage"
+        (keyup)="$event.keyCode == 13 && sendMessage()"
+      ></textarea>
+      <span class="submit-button" (click)="sendMessage()">
+        <i class="fa-solid fa-paper-plane"></i>
+      </span>
+    </div>
+  </div>
+</div>
+
+<!-- <div *ngFor="let message of messageList">
   <li>
     {{ message }}
   </li>
@@ -10,4 +92,4 @@
   [(ngModel)]="newMessage"
   (keyup)="$event.keyCode == 13 && sendMessage()"
 />
-<button (click)="sendMessage()">Send Message</button>
+<button (click)="sendMessage()">Send Message</button> -->
