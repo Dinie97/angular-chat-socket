@@ -50,12 +50,13 @@
 }
 
 .chat-content {
-  margin: 0px 1em 1em 1em;
+  margin: 1em 1em 1em 1em;
   display: flex;
   height: 70%;
   max-height: 70%;
   flex-direction: column;
   overflow-y: auto;
+  scroll-behavior: smooth;
 }
 
 .sender {
@@ -75,11 +76,12 @@
 
 .receiver-msg {
   width: auto;
-  max-width: 70%;
+  max-width: 60%;
   border: 1px solid;
   padding: 0.5rem 1rem;
   border-radius: 1em;
   font-size: 14px;
+  word-wrap: break-word;
   margin-top: 0.3em;
 }
 
@@ -87,8 +89,9 @@
   border: 1px solid;
   padding: 0.5rem 1rem;
   border-radius: 1rem;
+  word-wrap: break-word;
   width: auto;
-  max-width: 70%;
+  max-width: 60%;
   color: #fff;
   margin-top: 0.3em;
   font-size: 14px;

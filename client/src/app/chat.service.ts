@@ -7,18 +7,33 @@ import { io } from 'socket.io-client';
 })
 export class ChatService {
   public message$: BehaviorSubject<string> = new BehaviorSubject('');
-  constructor() {}
+  public id$: BehaviorSubject<string> = new BehaviorSubject('');
 
   socket = io('http://localhost:3000');
 
+  public myId: any;
+  constructor() {}
+
+  ngOnInit() {}
+
   public sendMessage(message: any) {
-    this.socket.emit('message', message);
+    var content = {
+      id: this.socket.id,
+      message: message,
+    };
+    this.socket.emit('message', content);
   }
 
   public getNewMessage = () => {
+    console.log(this.socket);
     this.socket.on('message', (message: any) => {
       this.message$.next(message);
     });
     return this.message$.asObservable();
+  };
+
+  public getId = () => {
+    this.id$.next(this.socket.id);
+    return this.id$.asObservable();
   };
 }

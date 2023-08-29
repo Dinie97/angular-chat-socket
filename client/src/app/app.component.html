@@ -4,7 +4,7 @@
   <div class="chat-box">
     <div class="chat-header">
       <div class="profile-details">
-        <img src="../assets/profile.jpg" alt="profile" class="profile-img" />
+        <img src="../assets/Profile-1.jpg" alt="profile" class="profile-img" />
         <span class="user-name">User Name</span>
       </div>
       <div>
@@ -13,64 +13,32 @@
       </div>
     </div>
     <div class="chat-content">
-      <div class="receiver">
-        <div class="receiver-img">
-          <img src="../assets/profile.jpg" alt="profile" class="chat-img" />
-        </div>
-        <div class="receiver-content">
-          <div class="receiver-msg">
-            <span>Test Message text receiver hellooo 1</span>
+      <div *ngFor="let chat of messageList">
+        <div class="receiver" *ngIf="myId != chat.id">
+          <div class="receiver-img">
+            <img src="{{ chat.url }}" alt="profile" class="chat-img" />
           </div>
-          <div class="receiver-msg">
-            <span>Test Message text receiver hellooo 2</span>
-          </div>
-          <div class="receiver-msg">
-            <span>Test Message text receiver hellooo 3</span>
+          <div class="receiver-content">
+            <div class="receiver-msg">
+              <span>{{ chat.message }}</span>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="sender">
-        <div class="sender-img">
-          <img
-            src="../assets/profile.jpg"
-            alt="profile"
-            class="chat-img-sender"
-          />
-        </div>
-        <div class="msg-content">
-          <div class="sender-msg">
-            <span>sender text message testing purpose 1 </span>
+        <div class="sender" *ngIf="myId === chat.id">
+          <div class="sender-img">
+            <img src="{{ chat.url }}" alt="profile" class="chat-img-sender" />
           </div>
-
-          <div class="sender-msg">
-            <span>sender text message testing purpose 2 </span>
-          </div>
-
-          <div class="sender-msg">
-            <span>sender text message testing purpose 3</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="receiver">
-        <div class="receiver-img">
-          <img src="../assets/profile.jpg" alt="profile" class="chat-img" />
-        </div>
-        <div class="receiver-content">
-          <div class="receiver-msg">
-            <span>Test Message text receiver hellooo 1</span>
-          </div>
-          <div class="receiver-msg">
-            <span>Test Message text receiver hellooo 2</span>
-          </div>
-          <div class="receiver-msg">
-            <span>Test Message text receiver hellooo 3</span>
+          <div class="msg-content">
+            <div class="sender-msg">
+              <span>{{ chat.message }}</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
     <div class="chat-input">
       <textarea
+        placeholder="Enter Messages"
         class="form-control"
         [(ngModel)]="newMessage"
         (keyup)="$event.keyCode == 13 && sendMessage()"
